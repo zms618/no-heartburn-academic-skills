@@ -22,7 +22,7 @@ These plugins are installed and used in ChatGPT Web. Each is powered by Skill in
 
 This collection currently includes three research plugins you can upload and use in ChatGPT Web:
 
-**🧩 01 · ChatGPT Web Plugin · [paper-reading](skills/paper-reading/README.en.md)**
+<big>**🧩 01 · ChatGPT Web Plugin · [paper-reading](skills/paper-reading/README.en.md)**</big>
 
 **Understand papers and practice scientific thinking.** Read explanations alongside original figures in ChatGPT, then learn to question assumptions, examine evidence, and design falsification experiments.
 
@@ -30,13 +30,13 @@ This collection currently includes three research plugins you can upload and use
 
 Download: [paper-reading v0.7.0 plugin ZIP](downloads/paper-reading-v0.7.0.zip). See the [plugin guide and upload instructions](skills/paper-reading/README.en.md#upload-the-zip-and-install-it-on-chatgpt-web). Core instructions: [`paper-reading/SKILL.md`](skills/paper-reading/SKILL.md).
 
-**🔬 02 · ChatGPT Web Plugin · [Research Idea Discovery](skills/research-idea-discovery/README.en.md)**
+<big>**🔬 02 · ChatGPT Web Plugin · [Research Idea Discovery](skills/research-idea-discovery/README.en.md)**</big>
 
 **Clarify research problems, investigate nearby work and evidence, and stress-test candidate directions** for novelty, validity, and feasibility before deciding whether to continue, revise, pivot, or stop.
 
 Download: [Research Idea Discovery v4.0.19 plugin ZIP](downloads/research-idea-discovery-v4.0.19.zip). See the [plugin guide and upload instructions](skills/research-idea-discovery/README.en.md#upload-the-zip-and-install-it-on-chatgpt-web). Primary Skill: [`Research Idea Discovery`](skills/research-idea-discovery/skills/research-idea-discovery/SKILL.md).
 
-**🧭 03 · ChatGPT Web Plugin · [AI Mentor](skills/ai-mentor/README.en.md)**
+<big>**🧭 03 · ChatGPT Web Plugin · [AI Mentor](skills/ai-mentor/README.en.md)**</big>
 
 **Bring your research questions to an AI mentor.** Discuss research ideas, literature, experiments, paper writing, figures, and pre-submission review, and turn complex challenges into concrete next steps.
 

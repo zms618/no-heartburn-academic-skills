@@ -22,7 +22,7 @@
 
 本项目目前收录三个可在 ChatGPT 网页端上传并使用的科研插件：
 
-**🧩 01 · ChatGPT 网页端插件 · [论文带读 · paper-reading](skills/paper-reading/README.md)**
+<big>**🧩 01 · ChatGPT 网页端插件 · [论文带读 · paper-reading](skills/paper-reading/README.md)**</big>
 
 **不止带你读懂论文，也帮助你练习科研思维。** 在 ChatGPT 对话中边读讲解、边对照论文原图；通过质疑假设、检查证据和设计反证实验，逐步练习独立科研判断。
 
@@ -30,13 +30,13 @@
 
 下载：[论文带读 v0.7.0 插件 ZIP](downloads/paper-reading-v0.7.0.zip)。查看[插件介绍与上传安装教程](skills/paper-reading/README.md#在-chatgpt-网页端上传-zip-并安装)。核心行为规范位于 [`paper-reading/SKILL.md`](skills/paper-reading/SKILL.md)。
 
-**🔬 02 · ChatGPT 网页端插件 · [科研创新点发现与验证 · Research Idea Discovery](skills/research-idea-discovery/README.md)**
+<big>**🔬 02 · ChatGPT 网页端插件 · [科研创新点发现与验证 · Research Idea Discovery](skills/research-idea-discovery/README.md)**</big>
 
 **从研究问题出发，核查研究现状、证据与可行性。** 再以审稿人视角压力测试候选方向，判断它是否值得继续、需要调整还是应该停止。
 
 下载：[Research Idea Discovery v4.0.19 插件 ZIP](downloads/research-idea-discovery-v4.0.19.zip)。查看[插件介绍与上传安装教程](skills/research-idea-discovery/README.md#在-chatgpt-网页端上传-zip-并安装)。主 Skill：[`Research Idea Discovery`](skills/research-idea-discovery/skills/research-idea-discovery/SKILL.md)。
 
-**🧭 03 · ChatGPT 网页端插件 · [AI 导师 · AI Mentor](skills/ai-mentor/README.md)**
+<big>**🧭 03 · ChatGPT 网页端插件 · [AI 导师 · AI Mentor](skills/ai-mentor/README.md)**</big>
 
 **科研中遇到问题，就和 AI 导师一起拆解。** 从研究想法、文献阅读、实验设计到论文写作、科研绘图和投稿前评审，提供连贯的讨论与下一步建议，帮助把复杂问题变成可行动的研究任务。
 
