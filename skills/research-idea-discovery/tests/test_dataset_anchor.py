@@ -72,7 +72,7 @@ class DatasetAnchorTests(unittest.TestCase):
             self.assertEqual(main(['dataset-anchor','--project',d,'--card',str(second)]),0)
             self.assertEqual(confirm_dataset_sample(d),0)
             self.assertFalse((p/'feasibility_result.json').exists())
-            self.assertEqual(json.loads((p/'workflow_state.json').read_text(encoding='utf-8'))['stage'],'DATA_ANCHOR')
+            self.assertEqual(json.loads((p/'workflow_state.json').read_text())['stage'],'DATA_ANCHOR')
     def test_audit_fails_if_dataset_anchor_missing(self):
         self.assertFalse(check_idea({'problem':'P','feasibility':{}})['gate_presence']['D0_existing_dataset_anchor'])
     def test_workflow_allows_idea_seed_but_blocks_feasibility_without_dataset(self):

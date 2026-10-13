@@ -51,7 +51,7 @@ class V27RegressionTests(unittest.TestCase):
             with self.assertRaises(SystemExit):main(['advance','--project',p,'--stage','FEASIBILITY','--reason','forged'])
     def test_review_stage_requires_specific_record_and_idea_revision(self):
         with tempfile.TemporaryDirectory() as p:
-            root=Path(p);main(['init','--project',p]);state=json.loads((root/'workflow_state.json').read_text(encoding='utf-8'));state['stage']='REVIEW';state.pop('protocol_version',None);
+            root=Path(p);main(['init','--project',p]);state=json.loads((root/'workflow_state.json').read_text());state['stage']='REVIEW';state.pop('protocol_version',None);
             (root/'workflow_state.json').write_text(json.dumps(state))
             with self.assertRaises(SystemExit):main(['advance','--project',p,'--stage','PILOT','--reason','no review'])
             (root/'review_result.json').write_text('{"ready":true}')
@@ -91,7 +91,7 @@ class V27RegressionTests(unittest.TestCase):
     def test_coverage_report_requires_real_record_before_novelty_promotion(self):
         with tempfile.TemporaryDirectory() as p:
             root=Path(p);main(['init','--project',p])
-            state=json.loads((root/'workflow_state.json').read_text(encoding='utf-8'));state['stage']='SCOOP'
+            state=json.loads((root/'workflow_state.json').read_text());state['stage']='SCOOP'
             (root/'workflow_state.json').write_text(json.dumps(state))
             (root/'novelty_result.json').write_text('{"ready":true}')
             with self.assertRaises(SystemExit):

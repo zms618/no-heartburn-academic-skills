@@ -1,130 +1,64 @@
 # Research Idea Discovery
 
-[简体中文](README.md) | **English** | [Collection overview](../../README.en.md)
+[简体中文](README.md) | **English** | [Plugin collection overview](../../README.en.md)
 
 **Evidence-Driven Research Idea Discovery, Feasibility Validation & Scientific Review**
 
-A personal research-idea discovery and validation plugin for ChatGPT Web, driven by the primary Research Idea Discovery Skill and supporting Skills. It does not treat idea generation as the finish line: it helps researchers find problems in prior evidence, challenge explanations, and decide what merits their time and resources.
+A research problem discovery and validation plugin for ChatGPT Web. It helps researchers clarify testable questions, examine related work and evidence, and use feasibility checks and reviewer-style stress tests to decide whether to continue, revise, pivot, or stop.
 
-> **This personal plugin is installed and used in ChatGPT Web; it does not consume Codex-specific task quota.** A step-by-step guide below shows how to create it with Plugin Creator and select it in a new conversation.
+> **Upload the ZIP to install it in ChatGPT Web; it does not consume Codex-specific task quota.**
+>
+> **More than idea generation: clarify the problem, then test the evidence, nearby work, feasibility, and strongest objections.**
 
-> **Start asking research questions while reading papers—not after reading dozens of them.** Move from reported experiments to falsifiable questions, then ask whether a problem matters, remains open, and is worth testing.
+The current **v4.0.19** release focuses on research-question formation, evidence review, and stress testing. It does not promise a novel direction or paper acceptance; when evidence is insufficient, it identifies what still needs investigation.
 
-It supports computer vision, multimodal learning, robotics, machine learning, and other user-selected fields. Scope can be adapted to a target venue or research goal. The objective is not to force an idea: when evidence is insufficient, the workflow may recommend narrowing the question, researching further, or stopping.
+## v4.0.19: autonomous validation and stress testing
 
-This plugin is used in **ChatGPT Web** and does not consume Codex-specific task quota. ChatGPT model, message, and tool use remains subject to the user's account and plan. Optional Python scripts run only in a local Python environment; do not assume ChatGPT Web executes them directly.
+For each candidate direction, the primary Skill asks the assistant to:
 
-## v3.5: Discover worthwhile problems while reading
+1. **Formulate the research question:** define the subject, goal, and scope.
+2. **Assess evidence confidence:** separate verified findings from reasonable judgments and hypotheses that need testing.
+3. **Audit nearby work:** examine recent papers, close methods, and terminology collisions rather than presenting a renamed method as new.
+4. **Validate the problem:** check whether it is real and worth studying, while considering counterexamples and alternative explanations.
+5. **Run reviewer-style stress tests:** challenge the gap, mechanism claim, experimental discrimination, execution demands, and potential field impact.
+6. **Assess feasibility:** check data, compute, reproducibility, and evaluation protocols; lower confidence or pause when validation is not credible.
+7. **Make a research decision:** recommend a next step such as GO, CONDITIONAL GO, REFRAME, or STOP based on the evidence.
+8. **Explore methods only after the decision gate:** avoid stacking modules before establishing the research motivation.
 
-Research Idea Discovery treats papers as **evidence, baselines, and intellectual lineage**, not just background to summarize after a literature search. For each key paper, it encourages questions such as: What does the result actually establish? What remains unproven? What is the strongest alternative explanation? Which low-cost experiment could tell these explanations apart?
+When novelty or feasibility evidence is insufficient, the plugin can identify gaps and prepare a copyable prompt for the user to run in ChatGPT Deep Research and bring back. Research decisions can be recorded to reduce repetitive discussion; the plugin does not claim to have launched cloud research or real experiments automatically.
 
-### Four evidence-grounded entry points
+## When is it useful?
 
-| Entry point | Start from | What to test |
-| --- | --- | --- |
-| **Failure-driven** | A failure, degradation, or boundary case actually reported in a paper | After checking samples, metrics, splits, and budget, can the failure be reproduced? |
-| **Reverse-engineer success** | A method with a strong reported result | Does the gain come from the claimed mechanism, or from capacity, budget, pretraining, or ordinary regularization? |
-| **Triage apparent contradictions** | Findings that seem to disagree across papers | Are task, data, backbone, split, metric, and compute comparable? If not, propose a fair comparison before calling it a scientific contradiction. |
-| **Translate deployment pain** | A real difficulty in hospitals, robotics, or industry | Can it become an important, measurable, testable scientific problem rather than an anecdote? |
+- You have a research area but need to identify a concrete, worthwhile question.
+- You have an idea and want to find the most dangerous neighboring work and challenge it rigorously.
+- You need to assess whether data, baselines, compute, and evaluation protocols support a credible test.
+- You want to prepare claims and evidence for reviewer-level scrutiny.
+- You lack enough evidence and want to know what to investigate—or whether to stop.
 
-Each lead should form a traceable chain:
+The package includes the primary research-decision Skill and supporting Skills for literature/data investigation, problem validation, mechanism necessity, reviewer stress tests, execution planning, and decision records. Web search, file handling, and tool access depend on your ChatGPT account and permissions; bundled Python scripts run only in environments that support local execution.
 
-**Paper → located experiment → known vs. unproven → problem/hypothesis → strongest null explanation → minimum no-new-method probe**
+## Design principles
 
-This puts scientific questioning inside the reading process instead of waiting until many papers have been collected and then inventing an idea from memory. Paper claims, reasonable inferences, and hypotheses to test remain distinct. A contribution statement or public code URL alone does not establish reproducibility.
+- **Problem before method:** transferring a popular technique creates a hypothesis, not a research motivation.
+- **Evidence before confidence:** search leads, planned experiments, and structural checks are not verified results.
+- **Audit close neighbors carefully:** compare problems, mechanisms, objectives, and protocols—not just titles and keywords.
+- **Look for the strongest counter-explanation:** prioritize experiments that distinguish a claim from alternatives.
+- **Stopping is a valid outcome:** recommend more investigation, reframing, or stopping when evidence does not justify the investment.
 
-### Establish the problem before choosing a method
+## Upload the ZIP and install it on ChatGPT Web
 
-The default is **problem-driven**: establish that a problem is real, important, and unresolved before selecting a method. **Method-driven** inspiration remains possible, but transferring a popular technique only generates a hypothesis. It must return to the independent M0 problem gate and show why it is more necessary than a simple alternative.
+The recommended route is to upload the prepared plugin package; you do not need Plugin Creator to rebuild it from source.
 
-For suitable paper-anchored fast-start tasks, v3.5 can suggest a small set of key papers with different roles and build an evidence map and motivation candidates while reading. When literature is sparse, an open-problem discovery route remains available; the workflow does not force a paper quota. After motivation screening, it proceeds to near-neighbor research, data/code asset checks, mechanism necessity, and a minimum decisive experiment. If the motivation gate fails, it can recommend more evidence, a narrower problem, a pivot, or stopping instead of fabricating a method.
+[Download the Research Idea Discovery v4.0.19 plugin ZIP](../../downloads/research-idea-discovery-v4.0.19.zip)
 
-### Scientific depth and research velocity are separate
+1. Open ChatGPT's personal plugins page (usually under your profile or Settings → Plugins/Personal plugins, or visit [chatgpt.com/plugins?directoryTab=personal](https://chatgpt.com/plugins?directoryTab=personal)).
+2. Select **Add** and then **Upload plugin ZIP**.
+3. Choose `research-idea-discovery-v4.0.19.zip`, wait for parsing, and follow the prompts to create or install it.
+4. Confirm it appears in your personal plugin list. Enable it from the tools/plugin picker in a new conversation, then describe your research area or current question.
 
-The plugin treats research value and startup speed as distinct questions:
+Interface labels may vary by account or product version. Uploading a personal plugin does not list it in ChatGPT's public directory. Web search and other tools depend on your current ChatGPT account and permissions; bundled Python scripts are for environments that support local execution and are not automatically run by ChatGPT Web.
 
-- **Scientific Depth:** What understanding could change? Is the question important, the mechanism unresolved, and the prediction falsifiable?
-- **Research Velocity:** Are data, code, weights, and licenses accessible? What time and compute are needed for the first diagnostic experiment?
-
-A high-impact direction blocked by resources and a fast experiment with limited contribution should be reported differently. v3.5 can help set conditional short-term GO/STOP checkpoints; it does not promise a paper in two weeks or predict acceptance at any venue.
-
-### v3.5 workflow
-
-**Anchor papers and opportunity landscape → motivation candidates → M0 problem gate → near-neighbor and reproducibility checks → necessary mechanism and method design → minimum decisive experiment → GO / REFINE / PIVOT / STOP / RESEARCH MORE**
-
-This is an iterative evidence-review process, not a pipeline that guarantees an idea. Structural checkers can validate whether records are complete; they cannot verify that a paper claim is true, a method is novel, or an experiment succeeded.
-
-## Why not just an idea generator?
-
-Typical idea generation can stop at module combinations, renamed concepts, or designing a model first and searching for motivation afterward. Research Idea Discovery connects proposal generation with adversarial review: it looks for dangerous near-neighbor papers, checks whether data and baselines are available, repeatedly challenges motivation and mechanism necessity, and prioritizes experiments that could falsify the hypothesis. It allows **REFINE, PIVOT, STOP, or RESEARCH MORE** rather than approving every idea.
-
-## Core capabilities
-
-### Discover research opportunities
-
-Start from failure cases, method boundaries, hidden assumptions, and tensions in the literature to form falsifiable hypotheses. Focus on substantive contributions to the question and mechanism; adding a Router, Adapter, or Attention block is not novelty by itself.
-
-### Validate data and experimental feasibility
-
-Researchers do not need to arrive with a verified dataset. The workflow searches for public or derivable datasets, open baselines, pretrained weights, labels, and evaluation protocols, then checks for a low-cost validation path. When local tools are available, scripts can inspect a bounded sample, fields, and hashes. Discovering metadata or filling in a card does not prove access, licensing, or completed experiments.
-
-### Audit near neighbors and mechanism-level novelty
-
-Compare more than titles and keywords: inspect the problem, assumptions, computational mechanism, training objective, evaluation protocol, and method boundaries. Look for renamed contributions, module stacking, and simple variants of existing mechanisms. Search records improve traceability; they do not prove exhaustive coverage or scientific novelty.
-
-### Re-examine motivation and scientific logic
-
-The workflow checks whether the problem matters, studies dangerous near neighbors and mechanism necessity, revisits the motivation in light of that comparison, and only then develops the scientific argument:
-
-**M1 Motivation Review → N Novelty Audit → L Mechanism Logic and Necessity → M2 Motivation Recheck → S Scientific Argument**
-
-Key questions include: Why should the mechanism solve the problem? Would a simple baseline suffice? Has a nearby paper already solved it? Can the experiments distinguish the proposed mechanism from alternatives?
-
-### Design a minimum decisive experiment and accept falsification
-
-Prioritize small experiments that can quickly support or refute the hypothesis. Consider simple competitors, mechanism ablations, strong baselines, negative results, and computational cost. If a simple baseline matches or outperforms the proposal, the workflow requires re-examining the mechanism, motivation, and claims. Experiments that have not been run must be labeled as plans, not results.
-
-### Deep-research handoff and research memory
-
-When evidence remains insufficient, the Skill can prepare a targeted ChatGPT Deep Research prompt based on the current gaps. The user starts the research and returns the report to the original workflow. Candidate ideas, near neighbors, rejection reasons, and experiment feedback can be stored in a local work directory; this is not automatic ChatGPT cloud memory or a background task.
-
-### Mentor-style research decision report
-
-After evidence review, the plugin can organize its findings into a decision-oriented report covering a plain-language explanation, motivation, related-work position, falsifiable hypothesis, evidence-supported potential contributions, scientific story, reviewer risks, feasibility, and the next decisive experiment. Claims are labeled `VERIFIED`, `CONDITIONAL`, `UNKNOWN`, or `HYPOTHESIS`, with Idea, Evidence, Contribution, and Paper Claim kept distinct. The report format does not turn unverified points into established results.
-
-## Research workflow
-
-**Opportunity discovery:** literature investigation → failure analysis → idea seeds
-
-**Value screening:** data search and anchoring → feasibility → motivation review → novelty → mechanism logic → motivation recheck
-
-**Scientific validation:** hypothesis → scientific argument → reviewer-style critique → minimum decisive experiment
-
-**Decision:** **GO / REFINE / PIVOT / STOP / RESEARCH MORE**
-
-This process can backtrack and iterate; it is not a one-shot answer pipeline. The full phase order, roles, and evidence gates are in the primary [`SKILL.md`](skills/research-idea-discovery/SKILL.md) and its `references/` files.
-
-## Create and install this plugin in ChatGPT Web
-
-This repository contains open-source Skill/plugin files. It does not mean the plugin is already installed in a ChatGPT account or listed in the public directory. You can create a personal plugin using **Plugin Creator** in ChatGPT Web; availability depends on the account, workspace, and current product features.
-
-1. Start a new ChatGPT Web conversation and select or mention **Plugin Creator**.
-2. Send the prompt below. It is a template for this repository; whether the creator can read GitHub or install directly depends on account and tool permissions.
-
-   ```text
-   Please create and install a personal ChatGPT plugin named Research Idea Discovery based on this GitHub repository:
-
-   https://github.com/zms618/no-heartburn-academic-skills
-
-   Use skills/research-idea-discovery/skills/research-idea-discovery/SKILL.md as the primary specification, and preserve the references, examples, and auxiliary Skills in that project directory. Follow evidence-driven idea discovery, data and experiment feasibility checks, mechanism-level near-neighbor review, motivation and logic rechecks, minimum decisive experiments, and explicit recommendations to stop or change direction.
-
-   Do not present search leads or planned experiments as verified evidence. Do not claim that ChatGPT Web automatically runs the repository's Python scripts. ChatGPT Web use does not require a Codex task or a separately configured API key for this Skill. Complete installation to my personal plugin list through the available interface.
-   ```
-
-3. Review the plugin instructions and reference paths. If the creator cannot read GitHub, upload `skills/research-idea-discovery/SKILL.md` and the required references from this project directory.
-4. In a new ChatGPT conversation, select the personal plugin and specify your field, goal, and desired research stage.
-
-A personal plugin is not thereby added to ChatGPT's public directory. Model, web search, file, and tool availability still depend on the ChatGPT account, selected model, and permissions. See [OpenAI's plugin guide](https://help.openai.com/en/articles/20001256-plugins-in-chatgpt).
+If ZIP upload is unavailable for your account, you can use Plugin Creator with this repository's source, following the primary Skill, references, and auxiliary Skills described on this page.
 
 ## Example prompts
 
@@ -179,8 +113,8 @@ Research Idea Discovery was shaped by ideas from open-source projects in AI-assi
 - [AI Night-Scientist](https://github.com/microsoft/ai_night_scientist) — Iterative scientific hypothesis exploration and AI-assisted research discovery.
 - [PatSnap Skills](https://github.com/patsnap/skills) — Ideas for identifying potentially valuable technical innovations from existing research and development materials.
 
-Building on these inspirations, this project independently organizes an evidence-review workflow for research ideas: **Idea Discovery → Feasibility Validation → Motivation Review → Novelty Audit → Mechanism and Logic Checks → Scientific Argument → Experimental Feedback**. These acknowledgements indicate conceptual or workflow inspiration; they do not imply official collaboration, endorsement, or full integration of upstream projects. Acknowledgement is separate from license compliance: any code, documentation, or templates actually copied, adapted, or redistributed remain subject to their applicable licenses.
+Building on these inspirations, this project organizes a research-decision workflow: **Research Question Formation → Evidence Confidence Check → Prior-Art Collision Audit → Problem Validation → Reviewer and Feasibility Stress Tests → Research Decision → Method Exploration only after GO**. These acknowledgements indicate conceptual or workflow inspiration; they do not imply official collaboration, endorsement, or full integration of upstream projects. Acknowledgement is separate from license compliance: any code, documentation, or templates actually copied, adapted, or redistributed remain subject to their applicable licenses.
 
 ## Version and license
 
-Current release: **v3.5.0**. The [`CHANGELOG.md`](CHANGELOG.md) records release changes without turning this page into a version-by-version feature log. Licensed under MIT; see [`../../LICENSE`](../../LICENSE).
+Current release: **v4.0.19**. The [`CHANGELOG.md`](CHANGELOG.md) records release changes without turning this page into a version-by-version feature log. Licensed under MIT; see [`../../LICENSE`](../../LICENSE).

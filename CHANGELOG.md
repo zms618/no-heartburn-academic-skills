@@ -1,5 +1,21 @@
 # Release notes
 
+## Research Idea Discovery v4.0.19 — 2026-10-13
+
+### Updated
+
+- Synchronize the primary research-decision Skill, auxiliary Skills, references, scripts, and regression tests from the v4.0.19 package.
+- Refocus the project guide on research-question formation, evidence confidence, prior-art collision checks, problem validation, reviewer stress tests, and feasibility decisions.
+- Add a prepared plugin ZIP for direct upload from ChatGPT's personal plugin page.
+
+## AI Mentor v1.4.0 — 2026-10-13
+
+### Added
+
+- Add AI Mentor as a ChatGPT Web plugin for discussing research questions, literature, experiments, writing, figures, and submission preparation.
+- Include its prepared upload ZIP and bilingual installation guides.
+- Preserve attribution and the CC BY-NC-SA 4.0 license for adapted materials from Supervisor-Skills.
+
 ## Research Idea Discovery v3.5.0 — 2026-10-09
 
 ### Added

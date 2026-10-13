@@ -79,7 +79,7 @@ class MotivationFirstTests(unittest.TestCase):
                 main(['advance','--project',d,'--stage',s,'--reason','fixture'])
             self.assertEqual(0,confirm_motivation_gate(d))
             f=p/'motivation_gate_card.json'
-            c=json.loads(f.read_text(encoding='utf-8'));c['evidence']=[];f.write_text(json.dumps(c))
+            c=json.loads(f.read_text());c['evidence']=[];f.write_text(json.dumps(c))
             with self.assertRaises(SystemExit):
                 main(['advance','--project',d,'--stage','DIVERGE','--reason','edited source'])
 

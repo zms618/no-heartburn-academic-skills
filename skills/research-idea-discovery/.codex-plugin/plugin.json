@@ -1,32 +1,21 @@
 {
-  "name": "research-idea-discovery",
-  "version": "3.5.0",
-  "description": "Paper-grounded research discovery from failures, successful mechanisms, apparent contradictions, and real-world needs, with motivation and evidence checks.",
   "author": {
-    "name": "ADA F CRAIG",
-    "email": "hecheng006@outlook.com"
+    "name": "Cheng He"
   },
+  "description": "Evidence-driven research idea discovery and validation, with problem formation, prior-art review, feasibility checks, and reviewer stress tests.",
   "interface": {
-    "displayName": "Research Idea Discovery",
-    "shortDescription": "从论文证据发现并审查研究问题",
-    "longDescription": "面向 ChatGPT 的证据驱动科研发现插件：从论文中的真实失败、成功机制、表面矛盾与应用困难出发，边读边提出可证伪问题。先通过 M0 动机准入，再核查近邻、数据与复现条件，审查机制必要性并设计最小验证实验；将科学深度与研究速度分开判断，证据不足时允许补查、转向或停止。",
-    "developerName": "Plugin owner",
-    "category": "Productivity",
     "capabilities": [
       "Interactive"
     ],
-    "defaultPrompt": [
-      "使用 Research Idea Discovery：我的研究方向是【填写方向】，目标是【填写会议/期刊/研究目标】。请从文献中寻找值得推进、可证伪且能避开已有工作的创新点。",
-      "使用 Research Idea Discovery：审查我这个 Idea 的新颖性、最危险近邻、核心假设和最小决定性实验。",
-      "使用 Research Idea Discovery：我暂时没有确定方向，请先做跨方向机会探索，列出有证据支持的问题，再帮我选择。"
-    ]
+    "category": "Education",
+    "defaultPrompt": "我正在研究【方向/问题】。请先帮助我把研究问题说清楚，再核查证据和最相关工作，评估可行性，并指出最可能推翻该方向的审稿人质疑。区分核实信息与待验证判断。",
+    "developerName": "Cheng He",
+    "displayName": "Research Idea Discovery",
+    "longDescription": "面向 ChatGPT 网页端的科研创新点发现与验证插件。帮助研究者形成可检验的问题，审查证据置信度与相关工作，评估研究可行性，并从严格审稿视角压力测试研究主张，最终给出继续、修改、转向或停止的建议。",
+    "shortDescription": "从研究问题出发，查证据、审近邻、测可行性"
   },
+  "keywords": [],
+  "name": "research-idea-discovery",
   "skills": "./skills",
-  "keywords": [
-    "research",
-    "innovation",
-    "literature",
-    "novelty",
-    "idea-discovery"
-  ]
+  "version": "4.0.19"
 }

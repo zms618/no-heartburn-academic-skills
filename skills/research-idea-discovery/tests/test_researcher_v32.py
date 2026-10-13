@@ -55,8 +55,7 @@ class ResearcherValue32(unittest.TestCase):
         self.assertIn('Non-DL or theory',t)
     def test_v32_method_designer_linked_to_main(self):
         t=(ROOT/'skills/research-idea-discovery/SKILL.md').read_text(encoding='utf-8')
-        self.assertIn('method-design-and-necessity.md',t)
-        self.assertIn('researcher-value-acceptance.md',t)
+        self.assertIn('Method Discovery (only after GO)',t)
         self.assertTrue((ROOT/'skills/research-method-designer/SKILL.md').is_file())
 
 if __name__=='__main__':unittest.main()

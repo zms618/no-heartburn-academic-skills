@@ -1,0 +1,9 @@
+{
+  "name": "AI Mentor",
+  "description": "A PhD-level AI research mentor based on Supervisor-Skills. Helps with research thinking, idea evaluation, literature review, paper planning, writing, figure design, and review simulation.",
+  "version": "1.4.0",
+  "skills_path": "skills",
+  "author": {
+    "name": "Cheng He"
+  }
+}

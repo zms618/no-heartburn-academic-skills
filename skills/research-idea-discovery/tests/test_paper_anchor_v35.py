@@ -76,17 +76,18 @@ class PaperAnchoredV35(unittest.TestCase):
             self.assertTrue(validate_stage_evidence(pr,'DIVERGE'))
             self.assertEqual(0,main(['advance','--project',tmp,'--stage','DIVERGE','--reason','paper + portfolio + M0 + gap']))
             original=pr/'paper_anchor_card.json'
-            x=json.loads(original.read_text(encoding='utf-8'));x['papers'][0]['reading_depth']='ABSTRACT_LEAD'
+            x=json.loads(original.read_text());x['papers'][0]['reading_depth']='ABSTRACT_LEAD'
             original.write_text(json.dumps(x));self.assertFalse(validate_stage_evidence(pr,'DIVERGE'))
     def test_open_problem_not_forced_to_have_papers(self):
         with tempfile.TemporaryDirectory() as tmp:
             main(['init','--project',tmp,'--goal','multimodal DG','--discovery-entry','OPEN_PROBLEM'])
-            st=json.loads((Path(tmp)/'workflow_state.json').read_text(encoding='utf-8'))
+            st=json.loads((Path(tmp)/'workflow_state.json').read_text())
             self.assertFalse(st['paper_anchor_required'])
             self.assertEqual('OPEN_PROBLEM',st['discovery_entry'])
-    def test_main_source_includes_motivation_and_method_boundaries(self):
+    def test_v4_main_source_requires_evidence_and_adversarial_review(self):
         s=(Path(__file__).parent.parent/'skills/research-idea-discovery/SKILL.md').read_text(encoding='utf-8')
-        for k in ('paper-lineage-and-critical-reading.md','reproduction-asset-policy.md','research-paper-anchor-scout','M0'):
+        for k in ('Evidence Confidence Gate','Prior Art Collision Audit','Reviewer Stress Test',
+                  'Feasibility Stress Test','Method Discovery (only after GO)'):
             self.assertIn(k,s)
 
 if __name__=='__main__':unittest.main()

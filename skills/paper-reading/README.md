@@ -4,7 +4,7 @@
 
 `paper-reading` 是一款面向 ChatGPT 网页版的论文带读个人插件，由 Skill 规范驱动。它不只帮助读者看懂论文，也通过提问、质疑和证据推理，逐步练习像研究者一样思考。核心流程和行为规范见 [`SKILL.md`](SKILL.md)。
 
-> **这是安装在 ChatGPT 网页端使用的个人插件，不消耗 Codex 专用额度。** 下方提供从 Plugin Creator 创建到在新对话中选择插件的完整教程。
+> **这是在 ChatGPT 网页端使用的个人插件，不消耗 Codex 专用额度。** 推荐直接上传本仓库提供的插件 ZIP 安装。
 
 ## 特点
 
@@ -58,12 +58,25 @@
 
 插件会优先尝试在对话中真实显示已核验的论文裁图。`sandbox:/mnt/data/...` 仅作为文件下载回退，可能显示为下载附件，不保证打开右侧预览；插件没有控制 ChatGPT 右侧图片预览栏的接口。
 
-## 在 ChatGPT 网页端创建和安装
+## 在 ChatGPT 网页端上传 ZIP 并安装
 
-`paper-reading` 尚未上架 ChatGPT 公共插件目录。可以通过 **Plugin Creator** 创建并安装为个人插件。下面的提示词已在 ChatGPT 网页端成功创建插件并保存到个人插件列表：
+**推荐方式：下载本仓库提供的插件 ZIP，直接导入 ChatGPT 个人插件。** 不需要先让 Plugin Creator 从 GitHub 重新制作。
 
-1. 打开 [ChatGPT 网页版](https://chatgpt.com/)，在新对话中选择或提及 **Plugin Creator**。
-2. 将以下完整提示词发送给它：
+[下载论文带读 v0.7.0 插件 ZIP](../../downloads/paper-reading-v0.7.0.zip)
+
+1. 打开 ChatGPT 的个人插件管理页面（可从头像/设置进入“插件”或“个人插件”；也可直接访问 [chatgpt.com/plugins?directoryTab=personal](https://chatgpt.com/plugins?directoryTab=personal)）。
+2. 点击右上角 **添加**，选择 **上传插件压缩包**。
+3. 选择刚下载的 `paper-reading-v0.7.0.zip`，等待解析完成后按界面提示创建或安装。
+4. 回到个人插件列表确认出现“论文带读”，在新对话的工具/插件选择器中启用它，然后上传论文 PDF 开始使用。
+
+如果界面名称略有不同，按“个人插件 → 添加 → 上传插件压缩包”的对应入口操作。个人插件不会因此自动上架公共目录；模型、文件和工具能力仍受 ChatGPT 账号权限影响。
+
+### 备用方式：通过 Plugin Creator 创建
+
+如果当前账号没有 ZIP 上传入口，可使用曾验证过的 Plugin Creator 创建流程：
+
+1. 在 ChatGPT 新对话中选择或提及 **Plugin Creator**。
+2. 发送以下提示词，并按界面提示完成安装：
 
    ```text
    请根据以下 GitHub 仓库创建并安装一个名为「论文带读（paper-reading）」的 ChatGPT 个人插件。
@@ -77,13 +90,7 @@
    不需要额外 API Key 或第三方服务。完成后安装到我的个人插件列表。
    ```
 
-3. 按界面提示完成创建和安装。成功后，个人插件列表中会出现“论文带读（paper-reading）”。
-
    ![Plugin Creator 成功创建并保存论文带读个人插件](../../docs/images/plugin-creator-paper-reading-created.png)
-
-4. 新建对话，在插件选择器中选“论文带读”，上传论文 PDF。可以从第一站开始，也可以明确指定希望讨论的阶段。
-
-如果 Plugin Creator 无法读取公开仓库，可下载并上传 [`SKILL.md`](https://raw.githubusercontent.com/zms618/no-heartburn-academic-skills/main/skills/paper-reading/SKILL.md)。创建入口受账号计划、地区和工作区权限影响；个人插件不会因此出现在公共插件目录中。官方说明见 [Plugins in ChatGPT](https://help.openai.com/en/articles/20001256-plugins-in-chatgpt)。
 
 ### 示例开场提示
 

@@ -92,12 +92,12 @@ class PortfolioV34(unittest.TestCase):
             self.assertEqual(0,main(['gap-investigation','--project',tmp,'--card',str(g)]))
             self.assertEqual(0,main(['advance','--project',tmp,'--stage','DIVERGE','--reason','both gates']) )
             p=project/'motivation_portfolio_card.json'
-            card=json.loads(p.read_text(encoding='utf-8'));card['motivations'][0]['failure_family']='tampered';p.write_text(json.dumps(card))
+            card=json.loads(p.read_text());card['motivations'][0]['failure_family']='tampered';p.write_text(json.dumps(card))
             self.assertFalse(__import__('scripts.workflow',fromlist=['validate_stage_evidence']).validate_stage_evidence(project,'DIVERGE'))
     def test_normal_mode_keeps_single_m0(self):
         with tempfile.TemporaryDirectory() as tmp:
             main(['init','--project',tmp,'--goal','Research in materials'])
-            st=json.loads((Path(tmp)/'workflow_state.json').read_text(encoding='utf-8'))
+            st=json.loads((Path(tmp)/'workflow_state.json').read_text())
             self.assertFalse(st['portfolio_required'])
     def test_cvpr_best_paper_impact_audit_mandatory_at_full_report(self):
         from tests.test_advisor_v31 import good
@@ -117,11 +117,11 @@ class PortfolioV34(unittest.TestCase):
     def test_non_cvpr_portfolio_opt_in(self):
         with tempfile.TemporaryDirectory() as tmp:
             main(['init','--project',tmp,'--goal','NEURIPS','--motivation-mode','PORTFOLIO'])
-            self.assertTrue(json.loads((Path(tmp)/'workflow_state.json').read_text(encoding='utf-8'))['portfolio_required'])
+            self.assertTrue(json.loads((Path(tmp)/'workflow_state.json').read_text())['portfolio_required'])
     def test_single_question_opt_out(self):
         with tempfile.TemporaryDirectory() as tmp:
             main(['init','--project',tmp,'--goal','CVPR_BEST_PAPER_ASPIRATION','--motivation-mode','SINGLE'])
-            self.assertFalse(json.loads((Path(tmp)/'workflow_state.json').read_text(encoding='utf-8'))['portfolio_required'])
+            self.assertFalse(json.loads((Path(tmp)/'workflow_state.json').read_text())['portfolio_required'])
     def test_report_portfolio_no_innovations_before_shortlist(self):
         c={'protocol_version':'3.4','report_phase':'MOTIVATION_PORTFOLIO','status':'NEEDS_EVIDENCE',
             'action':'RESEARCH_MORE','motivation_landscape':'Six candidate scientific questions and limits',

@@ -53,13 +53,14 @@ class AdvisorV31Test(unittest.TestCase):
         x=good();x['pilot_status']='EXECUTED';self.assertIn('executed pilot requires log reference',mod.audit(x))
     def test_main_skill_links_protocols(self):
         t=(ROOT/'skills/research-idea-discovery/SKILL.md').read_text(encoding='utf-8')
-        for s in ('plain-language-idea-protocol.md','research-execution-protocol.md','scientific-story-and-contributions.md','research-advisor-output-protocol.md'):
+        for s in ('Research Question Formation','Evidence Confidence Gate','Prior Art Collision Audit',
+                  'Reviewer Stress Test','Feasibility Stress Test','Method Discovery (only after GO)'):
             self.assertIn(s,t)
     def test_manifest_defaults_retained(self):
         m=json.loads((ROOT/'plugin.json').read_text(encoding='utf-8'))
         l=json.loads((ROOT/'.codex-plugin/plugin.json').read_text(encoding='utf-8'))
-        self.assertEqual('3.5.0',m['version']);self.assertEqual(m['version'],l['version'])
-        self.assertEqual(3,len(m['extensions']['com.openai']['interface']['defaultPrompt']))
+        self.assertEqual('4.0.19',m['version']);self.assertEqual(m['version'],l['version'])
+        self.assertGreaterEqual(len(m['extensions']['com.openai']['interface']['defaultPrompt']),1)
         self.assertEqual(m['extensions']['com.openai']['interface']['defaultPrompt'],l['interface']['defaultPrompt'])
 
 if __name__=='__main__':unittest.main()

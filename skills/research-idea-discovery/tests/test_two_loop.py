@@ -113,8 +113,8 @@ class TwoLoopTests(unittest.TestCase):
         self.assertFalse(audit_motivation_recheck(a)['ready'])
     def test_legacy_motivation_stage_invalidated(self):
         with tempfile.TemporaryDirectory() as d:
-            p=Path(d); main(['init','--project',d]);data=json.loads((p/'workflow_state.json').read_text(encoding='utf-8'))
+            p=Path(d); main(['init','--project',d]);data=json.loads((p/'workflow_state.json').read_text())
             data['stage']='MOTIVATION';(p/'workflow_state.json').write_text(json.dumps(data))
-            main(['status','--project',d]);self.assertEqual(json.loads((p/'workflow_state.json').read_text(encoding='utf-8'))['stage'],'FEASIBILITY')
+            main(['status','--project',d]);self.assertEqual(json.loads((p/'workflow_state.json').read_text())['stage'],'FEASIBILITY')
 
 if __name__=='__main__':unittest.main()

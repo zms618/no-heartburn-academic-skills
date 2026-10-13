@@ -4,7 +4,7 @@
 
 `paper-reading` is a personal paper-reading plugin for ChatGPT Web, driven by its Skill instructions. It does more than explain papers: through questions, challenges, and evidence-based reasoning, it helps readers practice thinking like researchers. The core workflow and assistant behavior are specified in [`SKILL.md`](SKILL.md).
 
-> **This personal plugin is installed and used in ChatGPT Web; it does not consume Codex-specific task quota.** A step-by-step guide below shows how to create it with Plugin Creator and select it in a new conversation.
+> **This personal plugin is used in ChatGPT Web and does not consume Codex-specific task quota.** The recommended setup is to upload the plugin ZIP provided in this repository.
 
 ## Features
 
@@ -56,12 +56,25 @@ Other examples show selecting the plugin, uploading a PDF, generating an analysi
 
 ![An explanatory schematic of global connections in Transformer Self-Attention](../../docs/images/self-attention-reading-example.png)
 
-## Create and install it on ChatGPT Web
+## Upload the ZIP and install it on ChatGPT Web
 
-`paper-reading` is not listed in ChatGPT's public plugin directory. You can create and install it as a personal plugin with **Plugin Creator**. The prompt below has been tested successfully to create the plugin in ChatGPT Web and save it to the personal plugin list:
+**Recommended: download the ready-to-upload plugin ZIP from this repository and import it into your ChatGPT personal plugins.** You do not need Plugin Creator to rebuild it from GitHub.
 
-1. Open [ChatGPT](https://chatgpt.com/) and select or mention **Plugin Creator** in a new conversation.
-2. Send the complete prompt below (the verified prompt is in Chinese):
+[Download the paper-reading v0.7.0 plugin ZIP](../../downloads/paper-reading-v0.7.0.zip)
+
+1. Open ChatGPT's personal plugin management page (usually under your profile or Settings → Plugins/Personal plugins; you can also visit [chatgpt.com/plugins?directoryTab=personal](https://chatgpt.com/plugins?directoryTab=personal)).
+2. Select **Add** and choose **Upload plugin ZIP**.
+3. Select `paper-reading-v0.7.0.zip`, wait for it to be parsed, and follow the interface to create or install it.
+4. Confirm that “论文带读” appears in your personal plugin list. Enable it from the tools/plugin picker in a new conversation, then upload a paper PDF.
+
+Labels may vary slightly by account or product version. A personal plugin is not thereby listed in the public directory; model, file, and tool access still depend on your ChatGPT account.
+
+### Alternative: create it with Plugin Creator
+
+If ZIP upload is not available for your account, the previously verified Plugin Creator flow is an alternative:
+
+1. Select or mention **Plugin Creator** in a new ChatGPT conversation.
+2. Send the prompt below and follow the interface to install the plugin:
 
    ```text
    请根据以下 GitHub 仓库创建并安装一个名为「论文带读（paper-reading）」的 ChatGPT 个人插件。
@@ -75,13 +88,7 @@ Other examples show selecting the plugin, uploading a PDF, generating an analysi
    不需要额外 API Key 或第三方服务。完成后安装到我的个人插件列表。
    ```
 
-3. Follow the interface to finish creation and installation. The “论文带读（paper-reading）” card should appear in your personal plugin list.
-
    ![Plugin Creator successfully created and saved the personal paper-reading plugin](../../docs/images/plugin-creator-paper-reading-created.png)
-
-4. Start a new conversation, select “论文带读” in the plugin picker, and upload a paper PDF. You can start at stage one or explicitly request another stage.
-
-If Plugin Creator cannot read the public repository, download and upload [`SKILL.md`](https://raw.githubusercontent.com/zms618/no-heartburn-academic-skills/main/skills/paper-reading/SKILL.md). Creation access depends on account plan, region, and workspace permissions. A personal plugin is not thereby added to the public directory. See [Plugins in ChatGPT](https://help.openai.com/en/articles/20001256-plugins).
 
 ### Example opening prompt
 
