@@ -24,7 +24,7 @@ This collection currently includes three research plugins you can upload and use
 
 <br><br>
 
-### 🧩 ChatGPT Web Plugin 01 · [paper-reading](skills/paper-reading/README.en.md)
+### 🧩 01 · ChatGPT Web Plugin · [paper-reading](skills/paper-reading/README.en.md)
 
 **Understand papers and practice scientific thinking.** Read explanations alongside original figures in ChatGPT, then learn to question assumptions, examine evidence, and design falsification experiments.
 
@@ -34,7 +34,7 @@ Download: [paper-reading v0.7.0 plugin ZIP](downloads/paper-reading-v0.7.0.zip).
 
 <br><br>
 
-### 🔬 ChatGPT Web Plugin 02 · [Research Idea Discovery](skills/research-idea-discovery/README.en.md)
+### 🔬 02 · ChatGPT Web Plugin · [Research Idea Discovery](skills/research-idea-discovery/README.en.md)
 
 **Clarify research problems, investigate nearby work and evidence, and stress-test candidate directions** for novelty, validity, and feasibility before deciding whether to continue, revise, pivot, or stop.
 
@@ -42,7 +42,7 @@ Download: [Research Idea Discovery v4.0.19 plugin ZIP](downloads/research-idea-d
 
 <br><br>
 
-### 🧭 ChatGPT Web Plugin 03 · [AI Mentor](skills/ai-mentor/README.en.md)
+### 🧭 03 · ChatGPT Web Plugin · [AI Mentor](skills/ai-mentor/README.en.md)
 
 **Bring your research questions to an AI mentor.** Discuss research ideas, literature, experiments, paper writing, figures, and pre-submission review, and turn complex challenges into concrete next steps.
 

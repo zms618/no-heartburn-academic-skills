@@ -24,7 +24,7 @@
 
 <br><br>
 
-### 🧩 ChatGPT 网页端插件 01 · [论文带读 · paper-reading](skills/paper-reading/README.md)
+### 🧩 01 · ChatGPT 网页端插件 · [论文带读 · paper-reading](skills/paper-reading/README.md)
 
 **不止带你读懂论文，也帮助你练习科研思维。** 在 ChatGPT 对话中边读讲解、边对照论文原图；通过质疑假设、检查证据和设计反证实验，逐步练习独立科研判断。
 
@@ -34,7 +34,7 @@
 
 <br><br>
 
-### 🔬 ChatGPT 网页端插件 02 · [科研创新点发现与验证 · Research Idea Discovery](skills/research-idea-discovery/README.md)
+### 🔬 02 · ChatGPT 网页端插件 · [科研创新点发现与验证 · Research Idea Discovery](skills/research-idea-discovery/README.md)
 
 **从研究问题出发，核查研究现状、证据与可行性。** 再以审稿人视角压力测试候选方向，判断它是否值得继续、需要调整还是应该停止。
 
@@ -42,7 +42,7 @@
 
 <br><br>
 
-### 🧭 ChatGPT 网页端插件 03 · [AI 导师 · AI Mentor](skills/ai-mentor/README.md)
+### 🧭 03 · ChatGPT 网页端插件 · [AI 导师 · AI Mentor](skills/ai-mentor/README.md)
 
 **科研中遇到问题，就和 AI 导师一起拆解。** 从研究想法、文献阅读、实验设计到论文写作、科研绘图和投稿前评审，提供连贯的讨论与下一步建议，帮助把复杂问题变成可行动的研究任务。
 
