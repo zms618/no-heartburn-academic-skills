@@ -22,7 +22,7 @@
 
 本项目目前收录三个可在 ChatGPT 网页端上传并使用的科研插件：
 
-<br><br>
+<br>
 
 ### 🧩 01 · ChatGPT 网页端插件 · [论文带读 · paper-reading](skills/paper-reading/README.md)
 
@@ -32,7 +32,7 @@
 
 下载：[论文带读 v0.7.0 插件 ZIP](downloads/paper-reading-v0.7.0.zip)。查看[插件介绍与上传安装教程](skills/paper-reading/README.md#在-chatgpt-网页端上传-zip-并安装)。核心行为规范位于 [`paper-reading/SKILL.md`](skills/paper-reading/SKILL.md)。
 
-<br><br>
+<br>
 
 ### 🔬 02 · ChatGPT 网页端插件 · [科研创新点发现与验证 · Research Idea Discovery](skills/research-idea-discovery/README.md)
 
@@ -40,7 +40,7 @@
 
 下载：[Research Idea Discovery v4.0.19 插件 ZIP](downloads/research-idea-discovery-v4.0.19.zip)。查看[插件介绍与上传安装教程](skills/research-idea-discovery/README.md#在-chatgpt-网页端上传-zip-并安装)。主 Skill：[`Research Idea Discovery`](skills/research-idea-discovery/skills/research-idea-discovery/SKILL.md)。
 
-<br><br>
+<br>
 
 ### 🧭 03 · ChatGPT 网页端插件 · [AI 导师 · AI Mentor](skills/ai-mentor/README.md)
 
